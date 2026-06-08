@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=apps" />
+
+    <style>
+        body{
+            background-color: #e2e2e2;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #000000;
+            color: white;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            filter: brightness(0) invert(1);
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            background-color: #6c757d !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .card-hover:hover .material-symbols-outlined {
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<div class="modal fade" id="modalRelogio" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Relógio Digital</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>Projeto de relógio digital com atualização em tempo real.</p>
+                <img src="images/RelogioDigitalPrint.png" class="img-fluid rounded mb-3">
+
+                <a href="https://math3uslc.github.io/Relogio-Digital/" target="_blank" class="btn btn-outline-dark">
+                    Ver no GitHub
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalContador" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Contador Numérico</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>Contador com limite usando JavaScript.</p>
+                <img src="images/ContadorPrint.png" class="img-fluid rounded mb-3">
+
+                <a href="https://math3uslc.github.io/Contador-com-Limite/" target="_blank" class="btn btn-outline-dark">
+                    Ver no GitHub
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalTodo" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">To Do List</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>Lista de tarefas com JavaScript e DOM.</p>
+                <img src="images/ToDoListPrint.png" class="img-fluid rounded mb-3">
+
+                <a href="https://math3uslc.github.io/TO-DO-List/" target="_blank" class="btn btn-outline-dark">
+                    Ver no GitHub
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<body id="topo">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4 fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Meu Portfólio</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#topo" data-bs-toggle="collapse"
+                            data-bs-target="#navMenu">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#info" data-bs-toggle="collapse"
+                            data-bs-target="#navMenu">Informações</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projetos" data-bs-toggle="collapse"
+                            data-bs-target="#navMenu">Projetos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato" data-bs-toggle="collapse"
+                            data-bs-target="#navMenu">Contato</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropPortfolio" role="button"
+                            data-bs-toggle="dropdown">
+                            Notificações
+                            <span class="badge bg-danger">2</span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#">Mensagem 1</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Mensagem 2</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="p-5"></div>
+
+    <!-- Conteúdo -->
+    <div class="container my-5">
+        <div class="row">
+
+            <!-- LADO ESQUERDO -->
+            <div class="col-lg-7 order-2 order-lg-1">
+                <div class="p-2" id="info"></div>
+                <div class="card shadow p-5">
+                    <h1>Informações</h1>
+                    <!-- Experiência -->
+                    <div class="accordion mb-3" id="accordionExperiencia">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne">
+                                    Experiência Profissional
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExperiencia">
+                                <div class="accordion-body">
+                                    Atualmente, não possuo experiência profissional na área.
+                                    No entanto, estou em busca da minha primeira oportunidade
+                                    para aplicar os conhecimentos adquiridos em meus estudos
+                                    e projetos pessoais.
+                                    <br><br>
+                                    Tenho grande interesse em aprender, desenvolver novas
+                                    habilidades e contribuir de forma dedicada para o
+                                    crescimento da equipe e da organização.
+                                    <br><br>
+                                    Sou uma pessoa comprometida, proativa e motivada a
+                                    enfrentar novos desafios, buscando constantemente
+                                    evolução profissional e pessoal.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Habilidades -->
+                    <div class="accordion mb-3" id="accordionHabilidades">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo">
+                                    Habilidades
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionHabilidades">
+                                <div class="accordion-body">
+                                    <h5>Soft Skills</h5>
+                                    <ul>
+                                        <li>Comunicação</li>
+                                        <li>Trabalho em Equipe</li>
+                                        <li>Organização</li>
+                                        <li>Criatividade</li>
+                                    </ul>
+                                    <h5>Hard Skills</h5>
+                                    <ul>
+                                        <li>JavaScript</li>
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                        <li>Bootstrap</li>
+                                        <li>Python</li>
+                                        <li>MySQL</li>
+                                        <li>React</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Formação -->
+                    <div class="accordion" id="accordionFormacao">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree">
+                                    Formação Acadêmica
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFormacao">
+                                <div class="accordion-body">
+                                    <h5>Ensino Médio - SESI (2024 - 2026)</h5>
+                                    <p>Cursando</p>
+                                    <h5>Técnico em Desenvolvimento de Sistemas - SENAI (2025 - 2026)</h5>
+                                    <p>Cursando</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-2" id="projetos"></div>
+                <div class="card shadow p-5">
+                    <h1 class="mb-4">Projetos</h1>
+
+                    <div class="row g-4">
+
+                        <!-- PROJETO 1 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img src="images/RelogioDigitalPrint.png" class="card-img-top">
+
+                                <div class="card-body">
+                                    <h5>Relógio Digital</h5>
+                                    <p>Projeto de relógio digital feito com HTML, CSS e JavaScript.</p>
+
+                                    <button class="btn btn-dark w-100 mb-2" data-bs-toggle="modal"
+                                        data-bs-target="#modalRelogio">
+                                        Ver Detalhes
+                                    </button>
+
+                                    <a href="https://github.com/math3uslc/Relogio-Digital" target="_blank"
+                                        class="btn btn-outline-secondary w-100">
+                                        Ver Código
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROJETO 2 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img src="images/ContadorPrint.png" class="card-img-top">
+
+                                <div class="card-body">
+                                    <h5>Contador Numérico</h5>
+                                    <p>Contador com limite usando JavaScript.</p>
+
+                                    <button class="btn btn-dark w-100 mb-2" data-bs-toggle="modal"
+                                        data-bs-target="#modalContador">
+                                        Ver Detalhes
+                                    </button>
+
+                                    <a href="https://github.com/math3uslc/Contador-com-Limite" target="_blank"
+                                        class="btn btn-outline-secondary w-100">
+                                        Ver Código
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROJETO 3 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img src="images/ToDoListPrint.png" class="card-img-top">
+
+                                <div class="card-body">
+                                    <h5>To Do List</h5>
+                                    <p>Lista de tarefas com JavaScript e DOM.</p>
+
+                                    <button class="btn btn-dark w-100 mb-2" data-bs-toggle="modal"
+                                        data-bs-target="#modalTodo">
+                                        Ver Detalhes
+                                    </button>
+
+                                    <a href="https://github.com/math3uslc/TO-DO-List" target="_blank"
+                                        class="btn btn-outline-secondary w-100">
+                                        Ver Código
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- VER MAIS -->
+                        <div class="col-md-6">
+                            <div class="card h-100 bg-secondary card-hover rounded">
+                                <a href="projetos.html" class="btn">
+                                    <div class="d-flex justify-content-center">
+                                        <span class="material-symbols-outlined mt-5"
+                                            style="font-size: 10em; color: white;">
+                                            apps
+                                        </span>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="text-white">Ver Mais</h5>
+                                        <p class="text-white">Todos os meus projetos produzidos.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- LADO DIREITO -->
+            <div class="col-lg-5 mt-4 mt-lg-0 order-1 order-lg-2">
+                <div class="p-2" id="contato"></div>
+                <div class="card shadow p-5">
+
+                    <div class="card-body text-center">
+
+                        <h1>Perfil</h1>
+                        <img src="images/selfie.jpg" alt="Minha Foto" class="img-fluid rounded-circle mb-3"
+                            style="width: 220px; height: 220px; object-fit: cover;">
+
+                        <h3>Matheus Loengo Coelho</h3>
+
+                        <p class="text-muted">
+                            Desenvolvedor Full Stack em Formação
+                        </p>
+
+                        <hr>
+
+                        <div class="text-start">
+
+                            <p>
+                                <strong>Cidade:</strong><br>
+                                Botucatu - SP
+                            </p>
+
+                            <p>
+                                <strong>E-mail:</strong><br>
+                                matheusloengocoelho@yahoo.com.br
+                            </p>
+
+                            <p>
+                                <strong>Telefone:</strong><br>
+                                (14) 99801-6231
+                            </p>
+
+                            <p>
+                                <strong>Idade:</strong><br>
+                                17 anos
+                            </p>
+
+                            <p>
+                                <strong>Objetivo:</strong><br>
+                                Atuar na área de Desenvolvimento de Sistemas,
+                                adquirindo experiência profissional e contribuindo
+                                com soluções tecnológicas.
+                            </p>
+                            <div class="d-flex justify-content-center">
+                                <a href="https://wa.me/5514998016231?text=Vi%20seu%20portif%C3%B3lio%20e%20queria%20conversar%20com%20voc%C3%AA%20sobre%20uma%20vaga!"
+                                    target="_blank"><button
+                                        class="bg-success text-white border-0 rounded-pill p-2 mt-5">Chamar no
+                                        Whatsapp</button></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="card shadow mt-3 p-5 mb-3">
+                    <h1>Curriculo CV</h1>
+                    <a href="https://drive.google.com/file/d/1fNwzBfsNrSdyJeEgRGWMwrM7bdBm1lON/view?usp=sharing"
+                        target="_blank"><button class="btn btn-dark w-100">
+                            Baixar
+                        </button></a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="mb-3 mb-md-0">
+                    <h5>Informações para Contato</h5>
+
+                    <p class="mb-1">
+                        <i class="bi bi-envelope-fill"></i>
+                        matheusloengocoelho@yahoo.com.br
+                    </p>
+
+                    <p class="mb-0">
+                        <i class="bi bi-telephone-fill"></i>
+                        (14) 99801-6231
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <p class="mb-0">
+                        © 2026 - Todos os direitos reservados
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bootstrap.bundle.js"></script>
+    <script>
+        (() => {
+            let animationId = null;
+
+            const easeInOutCubic = t =>
+                t < 0.5
+                    ? 4 * t * t * t
+                    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+
+                    const target = document.querySelector(
+                        link.getAttribute('href')
+                    );
+
+                    if (!target) return;
+
+                    // Cancela animação anterior
+                    if (animationId) {
+                        cancelAnimationFrame(animationId);
+                    }
+
+                    const headerOffset = 80; // ajuste se tiver menu fixo
+                    const startY = window.scrollY;
+                    const targetY =
+                        target.getBoundingClientRect().top +
+                        window.pageYOffset -
+                        headerOffset;
+
+                    const distance = targetY - startY;
+
+                    // duração dinâmica baseada na distância
+                    const duration = Math.min(
+                        Math.max(Math.abs(distance) * 0.7, 600),
+                        1800
+                    );
+
+                    let startTime = null;
+
+                    function animate(currentTime) {
+                        if (!startTime) startTime = currentTime;
+
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+
+                        window.scrollTo({
+                            top: startY + distance * easeInOutCubic(progress),
+                            behavior: "auto"
+                        });
+
+                        if (progress < 1) {
+                            animationId = requestAnimationFrame(animate);
+                        }
+                    }
+
+                    animationId = requestAnimationFrame(animate);
+                });
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -41,6 +41,11 @@
             filter: brightness(0) invert(1);
         }
 
+        .accordion-button:focus {
+            box-shadow: none !important;
+            outline: none !important;
+        }
+
         .card-hover {
             transition: all 0.3s ease;
             cursor: pointer;
@@ -250,7 +255,7 @@
                     <h5 class="modal-title fw-bold" id="formularioModalLabel">
                         Avalie meu portfólio
                     </h5>
-                    <small class="text-muted">
+                    <small class="text-secondary-subtle">
                         Seu feedback ajuda na evolução do projeto
                     </small>
                 </div>
@@ -305,30 +310,30 @@
                         <div class="d-flex flex-wrap gap-2">
 
                             <input type="checkbox" class="btn-check" name="atencao" id="design" value="Design">
-                            <label class="btn btn-outline-dark rounded-pill px-3 py-2" for="design">
+                            <label class="btn btn-outline-light rounded-pill px-3 py-2" for="design">
                                 Design
                             </label>
 
                             <input type="checkbox" class="btn-check" name="atencao" id="atencaoProjetos"
                                 value="Projetos">
-                            <label class="btn btn-outline-dark rounded-pill px-3 py-2" for="atencaoProjetos">
+                            <label class="btn btn-outline-light rounded-pill px-3 py-2" for="atencaoProjetos">
                                 Projetos
                             </label>
 
                             <input type="checkbox" class="btn-check" name="atencao" id="codigo" value="Código">
-                            <label class="btn btn-outline-dark rounded-pill px-3 py-2" for="codigo">
+                            <label class="btn btn-outline-light rounded-pill px-3 py-2" for="codigo">
                                 Código
                             </label>
 
                             <input type="checkbox" class="btn-check" name="atencao" id="responsividade"
                                 value="Responsividade">
-                            <label class="btn btn-outline-dark rounded-pill px-3 py-2" for="responsividade">
+                            <label class="btn btn-outline-light rounded-pill px-3 py-2" for="responsividade">
                                 Responsividade
                             </label>
 
                             <input type="checkbox" class="btn-check" name="atencao" id="performance"
                                 value="Performance">
-                            <label class="btn btn-outline-dark rounded-pill px-3 py-2" for="performance">
+                            <label class="btn btn-outline-light rounded-pill px-3 py-2" for="performance">
                                 Performance
                             </label>
 
@@ -344,11 +349,11 @@
 
                     <!-- Botões -->
                     <div class="modal-footer border-0 pt-0">
-                        <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">
+                        <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal">
                             Fechar
                         </button>
 
-                        <button type="submit" class="btn btn-dark rounded-pill px-4">
+                        <button type="submit" class="btn btn-light rounded-pill px-4">
                             Enviar
                         </button>
                     </div>
@@ -699,7 +704,7 @@
                                     <h5>Relógio Digital</h5>
                                     <p>Projeto de relógio digital feito com HTML, CSS e JavaScript.</p>
 
-                                    <button class="btn bg-white w-100 mb-2" data-bs-toggle="modal"
+                                    <button class="btn text-black bg-white w-100 mb-2" data-bs-toggle="modal"
                                         data-bs-target="#modalRelogio">
                                         Ver Detalhes
                                     </button>
@@ -721,7 +726,7 @@
                                     <h5>Contador Numérico</h5>
                                     <p>Contador com limite usando JavaScript.</p>
 
-                                    <button class="btn bg-white w-100 mb-2" data-bs-toggle="modal"
+                                    <button class="btn text-black bg-white w-100 mb-2" data-bs-toggle="modal"
                                         data-bs-target="#modalContador">
                                         Ver Detalhes
                                     </button>
@@ -743,7 +748,7 @@
                                     <h5>To Do List</h5>
                                     <p>Lista de tarefas com JavaScript e DOM.</p>
 
-                                    <button class="btn bg-white w-100 mb-2" data-bs-toggle="modal"
+                                    <button class="btn text-black bg-white w-100 mb-2" data-bs-toggle="modal"
                                         data-bs-target="#modalTodo">
                                         Ver Detalhes
                                     </button>

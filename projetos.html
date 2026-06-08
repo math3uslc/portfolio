@@ -11,37 +11,113 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios" />
 
+    <style>
+        /* ================= CARD PADRÃO ================= */
+        .projeto-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all .3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.192);
+            cursor: pointer;
+            background-color: #fff;
+        }
 
+        .projeto-card img {
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        /* hover */
+        .projeto-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+        }
+
+        /* ================= CARD SELECIONADO ================= */
+        .projeto-card.selected {
+            background: linear-gradient(135deg, #6f42c1, #8b5cf6);
+            color: white;
+            box-shadow: 0 15px 40px rgba(111, 66, 193, 0.5);
+        }
+
+        .projeto-card.selected .card-title,
+        .projeto-card.selected .card-text {
+            color: white;
+        }
+
+        .projeto-card.selected img {
+            filter: brightness(0.9);
+        }
+
+        /* efeito de clique mais suave */
+        .projeto-card:active {
+            transform: scale(0.98);
+        }
+
+        .card-title {
+            font-weight: 600;
+        }
+
+        /* ============================== fundo */
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, rgb(48, 48, 48) 50%, rgb(0, 0, 0) 50%);
+            bottom: 0;
+            left: -50%;
+            opacity: .5;
+            position: fixed;
+            right: -50%;
+            top: 0;
+            z-index: -1;
+        }
+
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 4s;
+        }
+
+        .bg3 {
+            animation-duration: 5s;
+        }
+
+        .content {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: .25em;
+            box-shadow: 0 0 .25em rgba(0, 0, 0, 0.082);
+            box-sizing: border-box;
+            left: 50%;
+            padding: 10vmin;
+            position: fixed;
+            text-align: center;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-25%);
+            }
+
+            100% {
+                transform: translateX(25%);
+            }
+        }
+    </style>
 </head>
 
-<style>
-    body {
-        background-color: #e2e2e2;
-    }
-
-    .projeto-card {
-        border: none;
-        border-radius: 15px;
-        overflow: hidden;
-        transition: all .3s ease;
-        box-shadow: 1 5px 20px rgba(0, 0, 0, 0.192);
-    }
-
-    .projeto-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
-    }
-
-    .projeto-card img {
-        height: 220px;
-        object-fit: cover;
-        border-bottom: 1px solid #dee2e6;
-    }
-
-    .card-title {
-        font-weight: 600;
-    }
-</style>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
 
 <body>
     <!-- Navbar -->
@@ -57,104 +133,136 @@
     <div style="margin-top: 120px;"></div>
 
     <div class="container my-5">
-        <a class="d-inline-flex align-items-center text-decoration-none mb-3" href="index.html">
-            <span class="material-symbols-outlined text-black">
-                arrow_back_ios
-            </span>
-        </a>
-        <div class="row g-4">
-
-            <!-- Projeto 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card projeto-card h-100">
-                    <img src="images/AeroCuesta.png" class="card-img-top" alt="AeroCuesta">
-                    <div class="card-body">
-                        <h5 class="card-title">AeroCuesta</h5>
-                        <p class="card-text">Sistema desenvolvido para o projeto AeroCuesta.</p>
+        <!-- Projetos Front-end -->
+        <div class="card p-5 bg-black shadow-lg mb-5">
+            <div class="row g-4">
+                <h1 class="text-white">Projetos Front-end</h1>
+                <!-- Projeto 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card projeto-card h-100 bg-dark">
+                        <img src="images/AeroCuesta.png" class="card-img-top" alt="AeroCuesta">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">AeroCuesta</h5>
+                            <p class="card-text">Sistema desenvolvido para o projeto AeroCuesta.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card projeto-card h-100 bg-dark">
+                        <img src="images/CarrosselEfeitoPrint.png" class="card-img-top" alt="Carrossel">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Carrossel com Efeito</h5>
+                            <p class="card-text">Estudo de animações e transições.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card projeto-card h-100 bg-dark">
+                        <img src="images/GridPrint.png" class="card-img-top" alt="Grid">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Layout Grid</h5>
+                            <p class="card-text">Exemplo de estrutura responsiva utilizando Grid.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card projeto-card h-100 bg-dark">
+                        <img src="images/JaFoodPrint.png" class="card-img-top" alt="JaFood">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">JáFood</h5>
+                            <p class="card-text">Aplicação inspirada em delivery de comida.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card projeto-card h-100 bg-dark">
+                        <img src="images/MetodosHTTPCrudPrint.png" class="card-img-top" alt="CRUD">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">CRUD HTTP</h5>
+                            <p class="card-text">Operações utilizando métodos HTTP.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card projeto-card h-100 bg-dark">
+                        <img src="images/MiniAPPPrint.png" class="card-img-top" alt="Mini App">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Mini App</h5>
+                            <p class="card-text">Aplicação prática desenvolvida para estudos.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 7 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card projeto-card h-100 bg-dark">
+                        <img src="images/MudancaEstadoPrint.png" class="card-img-top" alt="Mudança de Estado">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Mudança de Estado</h5>
+                            <p class="card-text">Manipulação dinâmica de estados da interface.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 8 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card projeto-card h-100 bg-dark">
+                        <img src="images/VitrinePrint.png" class="card-img-top" alt="Vitrine">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Vitrine</h5>
+                            <p class="card-text">Projeto de exibição de produtos responsivo.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Projeto 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card projeto-card h-100">
-                    <img src="images/CarrosselEfeitoPrint.png" class="card-img-top" alt="Carrossel">
-                    <div class="card-body">
-                        <h5 class="card-title">Carrossel com Efeito</h5>
-                        <p class="card-text">Estudo de animações e transições.</p>
+        <!-- Projetos Prototipagem -->
+        <div class="card p-5 bg-black shadow-lg mb-5">
+            <div class="row g-4">
+                <h1 class="text-white">Projetos Prototipagem</h1>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card projeto-card bg-dark h-100">
+                        <img src="images/Prototipagem1.png" class="card-img-top" alt="Prototipagem Darede">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Prototipagem Darede</h5>
+                            <p class="card-text">Prototipagem desenvolvida para o projeto Darede.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card projeto-card bg-dark h-100">
+                        <img src="images/Prototipagem2.png" class="card-img-top" alt="Prototipagem UniSaúde">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Prototipagem UniSaúde</h5>
+                            <p class="card-text">Prototipagem desenvolvida para o projeto UniSaúde.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Projeto 3 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card projeto-card h-100">
-                    <img src="images/GridPrint.png" class="card-img-top" alt="Grid">
-                    <div class="card-body">
-                        <h5 class="card-title">Layout Grid</h5>
-                        <p class="card-text">Exemplo de estrutura responsiva utilizando Grid.</p>
+        <!-- Projetos MySQL -->
+        <div class="card p-5 bg-black shadow-lg">
+            <div class="row g-4">
+                <h1 class="text-white">Projetos MySQL</h1>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-dark projeto-card h-100">
+                        <img src="images/db1.png" class="card-img-top" alt="Banco de Dados para um APP de posto de saúde">
+                        <div class="card-body text-white">
+                            <h5 class="card-title">Banco de Dados</h5>
+                            <p class="card-text">Banco de Dados para um APP de posto de saúde.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Projeto 4 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card projeto-card h-100">
-                    <img src="images/JaFoodPrint.png" class="card-img-top" alt="JaFood">
-                    <div class="card-body">
-                        <h5 class="card-title">JáFood</h5>
-                        <p class="card-text">Aplicação inspirada em delivery de comida.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projeto 5 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card projeto-card h-100">
-                    <img src="images/MetodosHTTPCrudPrint.png" class="card-img-top" alt="CRUD">
-                    <div class="card-body">
-                        <h5 class="card-title">CRUD HTTP</h5>
-                        <p class="card-text">Operações utilizando métodos HTTP.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projeto 6 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card projeto-card h-100">
-                    <img src="images/MiniAPPPrint.png" class="card-img-top" alt="Mini App">
-                    <div class="card-body">
-                        <h5 class="card-title">Mini App</h5>
-                        <p class="card-text">Aplicação prática desenvolvida para estudos.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projeto 7 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card projeto-card h-100">
-                    <img src="images/MudancaEstadoPrint.png" class="card-img-top" alt="Mudança de Estado">
-                    <div class="card-body">
-                        <h5 class="card-title">Mudança de Estado</h5>
-                        <p class="card-text">Manipulação dinâmica de estados da interface.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projeto 8 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card projeto-card h-100">
-                    <img src="images/VitrinePrint.png" class="card-img-top" alt="Vitrine">
-                    <div class="card-body">
-                        <h5 class="card-title">Vitrine</h5>
-                        <p class="card-text">Projeto de exibição de produtos responsivo.</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
@@ -181,8 +289,18 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="bootstrap.min.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+    <script>
+    // Seleciona todos os cards
+    const cards = document.querySelectorAll('.projeto-card');
+
+    // Adiciona o evento de clique em cada card
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('selected'); // alterna a classe 'selected'
+        });
+    });
+</script>
 </body>
 
 </html>

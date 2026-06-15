@@ -35,29 +35,21 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
         }
 
-        /* ================= CARD SELECIONADO ================= */
-        .projeto-card.selected {
-            background: linear-gradient(135deg, #6f42c1, #8b5cf6);
-            color: white;
-            box-shadow: 0 15px 40px rgba(111, 66, 193, 0.5);
-        }
-
-        .projeto-card.selected .card-title,
-        .projeto-card.selected .card-text {
-            color: white;
-        }
-
-        .projeto-card.selected img {
-            filter: brightness(0.9);
-        }
-
-        /* efeito de clique mais suave */
-        .projeto-card:active {
-            transform: scale(0.98);
-        }
-
         .card-title {
             font-weight: 600;
+        }
+
+        .categoria-card {
+            background: #181818;
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .categoria-card h1 {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
         }
 
         /* ============================== fundo */
@@ -113,26 +105,64 @@
     </style>
 </head>
 
-<div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
-
 <body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4 fixed-top">
         <div class="container">
-            <div class="d-flex justify-content-center align-items-center">
-                <a class="navbar-brand" href="#">Projetos</a>
+
+            <a class="navbar-brand fw-bold" href="#">
+                Projetos
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetos">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuProjetos">
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#frontend" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse">
+                            Front-end
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prototipagem" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse">
+                            Prototipagem
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mysql" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                            MySQL
+                        </a>
+                    </li>
+
+                </ul>
+
             </div>
         </div>
     </nav>
 
     <!-- Espaço para compensar a navbar fixa -->
-    <div style="margin-top: 120px;"></div>
 
     <div class="container my-5">
         <!-- Projetos Front-end -->
-        <div class="card p-5 bg-black shadow-lg mb-5">
+        <div class="p-5" id="frontend"></div>
+        <div class="categoria-card p-5">
             <div class="row g-4">
                 <h1 class="text-white">Projetos Front-end</h1>
                 <!-- Projeto 1 -->
@@ -218,8 +248,9 @@
             </div>
         </div>
 
+        <div class="p-5" id="prototipagem"></div>
         <!-- Projetos Prototipagem -->
-        <div class="card p-5 bg-black shadow-lg mb-5">
+        <div class="categoria-card p-5">
             <div class="row g-4">
                 <h1 class="text-white">Projetos Prototipagem</h1>
                 <div class="col-md-6 col-lg-4">
@@ -244,7 +275,8 @@
         </div>
 
         <!-- Projetos MySQL -->
-        <div class="card p-5 bg-black shadow-lg">
+        <div class="p-5" id="mysql"></div>
+        <div class="categoria-card p-5 mb-5">
             <div class="row g-4">
                 <h1 class="text-white">Projetos MySQL</h1>
                 <div class="col-md-6 col-lg-4">
@@ -290,14 +322,28 @@
 
     <script src="bootstrap.bundle.js"></script>
     <script>
-        // Seleciona todos os cards
-        const cards = document.querySelectorAll('.projeto-card');
+        document.querySelectorAll('.navbar .nav-link').forEach(link => {
 
-        // Adiciona o evento de clique em cada card
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                card.classList.toggle('selected'); // alterna a classe 'selected'
+            link.addEventListener('click', function (e) {
+
+                const target = document.querySelector(this.getAttribute('href'));
+
+                if (!target) return;
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                const navMenu = document.getElementById('navMenu');
+
+                if (window.innerWidth < 992 && navMenu.classList.contains('show')) {
+                    bootstrap.Collapse.getOrCreateInstance(navMenu).hide();
+                }
             });
+
         });
     </script>
 </body>
